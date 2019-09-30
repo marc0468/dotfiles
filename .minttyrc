@@ -1,0 +1,12 @@
+Font=Ricty Diminished
+FontHeight=10
+FontSmoothing=default
+Columns=120
+Rows=40
+BoldAsFont=no
+BoldAsColour=yes
+AllowBlinking=yes
+ThemeFile=nord
+Term=xterm
+Transparency=low
+OpaqueWhenFocused=no
