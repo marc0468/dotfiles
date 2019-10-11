@@ -16,4 +16,4 @@ mklink  %HOMEPATH%\.bash_profile %HOMEPATH%\dev\dotfiles\.bash_profile
 ```
 
 ### Mac, Linux
-install.shを実行する。
+`dotfilesLink.sh`を実行する。
