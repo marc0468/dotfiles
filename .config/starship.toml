@@ -7,16 +7,19 @@ symbol = "➜"     # The "symbol" segment is being set to "➜"
 [battery]
 full_symbol = "🔋"
 charging_symbol = "⚡️"
-discharging_symbol = "💀"
+discharging_symbol = "👿"
 [[battery.display]]  # バッテリー残量が0％〜30％の間は「太字の赤色」スタイルを利用する
 threshold = 30
 style = "bold red"
-[[battery.display]]  # バッテリー残量が30％〜50％の間は「太字の黄色」スタイルを利用する
-threshold = 50
+[[battery.display]]  # バッテリー残量が31％〜60％の間は「太字の黄色」スタイルを利用する
+threshold = 60
 style = "bold yellow"
-[[battery.display]]  # バッテリー残量が50％〜80％の間は「太字の緑色」スタイルを利用する
+[[battery.display]]  # バッテリー残量が61％〜100％の間は「太字の緑色」スタイルを利用する
 threshold = 100
-style = "bold green"
+style = "bold blue"
+
+[directory]
+truncation_length = 8
 
 [git_branch]
 symbol = "🌱 "
@@ -35,5 +38,8 @@ deleted = "🗑"
 
 [time]
 disabled = true
-format = "🕙[ %T ]"
+format = "[%T]"
 utc_time_offset = -9
+
+[username]
+show_always = true
