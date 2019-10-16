@@ -5,6 +5,7 @@ add_newline = false
 symbol = "➜"     # The "symbol" segment is being set to "➜"
 
 [battery]
+disabled = true
 full_symbol = "🔋"
 charging_symbol = "⚡️"
 discharging_symbol = "👿"
