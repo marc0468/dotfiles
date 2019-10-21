@@ -30,7 +30,6 @@ alias gst='git status'
 
 alias python="python3"
 alias py="python3"
-export PATH="$HOME/.pyenv/shims:$PATH"
 
 # tmux起動時処理
 if [ ${TERM_PROGRAM} = "vscode" ]; then
