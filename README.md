@@ -17,3 +17,11 @@ mklink  %HOMEPATH%\.bash_profile %HOMEPATH%\dev\dotfiles\.bash_profile
 
 ### Mac, Linux
 `dotfilesLink.sh`を実行する。
+
+##Install
+
+### zsh-autosuggestions.zsh
+Link: https://github.com/zsh-users/zsh-autosuggestions
+```
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+```
