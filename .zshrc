@@ -32,7 +32,7 @@ alias python="python3"
 alias py="python3"
 
 # tmux起動時処理
-if [ ${TERM_PROGRAM} = "vscode" ]; then
+if [ "${TERM_PROGRAM}" = "vscode" ]; then
 else
   if [[ ! -n $TMUX ]]; then
     # get the IDs
