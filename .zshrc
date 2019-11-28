@@ -1,14 +1,16 @@
-# 履歴ファイルの読み込み
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+# History
+# History file
+export HISTFILE=~/.zsh_history
+# History size in memory
+export HISTSIZE=10000
+# The number of histsize
+export SAVEHIST=1000000
 
 # 補完機能
 autoload -Uz compinit
 compinit
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}' '+m:{[:upper:]}={[:lower:]}'
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-setopt AUTO_CD
 
 # 色を使用出来るようにする
 autoload -U colors
