@@ -3,6 +3,8 @@
 
 # Python
 __pycache__/
+.env
 
 # VS CODE
 .vscode/
+.devcontainer/
