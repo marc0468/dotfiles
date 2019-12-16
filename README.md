@@ -1,8 +1,6 @@
 # dotfiles
 my dotfiles
 
-参考: [dotfilesをGitHubで管理](https://qiita.com/okamos/items/7f5461814e8ed8916870)
-
 ## 使い方
 
 ### Windows
@@ -11,3 +9,7 @@ my dotfiles
 
 ### Mac, Linux
 [dotfilesLink.sh](dotfilesLink.sh)を実行してください。
+
+## Reference
+
+* dotfilesをGitHubで管理<https://qiita.com/okamos/items/7f5461814e8ed8916870?>
