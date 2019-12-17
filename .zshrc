@@ -7,10 +7,13 @@ export HISTSIZE=10000
 export SAVEHIST=1000000
 
 # 補完機能
-autoload -Uz compinit
-compinit
+if [ -e ~/.zsh/completions ]; then
+  fpath=(~/.zsh/completions $fpath)
+fi
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}' '+m:{[:upper:]}={[:lower:]}'
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+autoload -U compinit
+compinit
 
 # 色を使用出来るようにする
 autoload -U colors
