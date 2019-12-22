@@ -8,6 +8,7 @@ choco install -y k-litecodecpackfull
 choco install -y 7zip.install
 
 @rem 開発環境
+choco install -y sourcetree
 choco install -y winmerge
 choco install -y git
 choco install -y sakuraeditor
