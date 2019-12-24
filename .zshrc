@@ -21,13 +21,12 @@ colors
 
 # alias
 alias ls='ls -G'
-alias la='ls -a'
-alias ll='ls -la'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
-
-alias d='docker'
 
 alias g='git'
 alias ga='git add'
