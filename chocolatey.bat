@@ -4,8 +4,12 @@
 @rem ˆê”Êƒc[ƒ‹
 choco install -y googlechrome
 choco install -y mpc-hc
-choco install -y k-litecodecpackfull
 choco install -y 7zip.install
+
+@rem ˜^‰æŠÂ‹«
+choco install -y plexmediaserver
+choco install -y k-litecodecpackfull
+choco install -y nodejs-lts
 
 @rem ŠJ”­ŠÂ‹«
 choco install -y winmerge
