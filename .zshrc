@@ -1,3 +1,8 @@
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
 # History
 # History file
 export HISTFILE=~/.zsh_history
@@ -50,7 +55,3 @@ else
     tmux attach-session -t "$ID"
   fi
 fi
-
-# Starshipの読み込み
-eval "$(starship init zsh)"
-export PATH=$HOME/.nodebrew/current/bin:$PATH
