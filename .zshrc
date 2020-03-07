@@ -11,12 +11,14 @@ export HISTSIZE=10000
 # The number of histsize
 export SAVEHIST=1000000
 
+# zsh autosuggestions
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # 補完機能
 if [ -e ~/.zsh/completions ]; then
   fpath=(~/.zsh/completions $fpath)
 fi
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}' '+m:{[:upper:]}={[:lower:]}'
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 autoload -U compinit
 compinit
 
