@@ -8,3 +8,5 @@ ln -sf ${PWD}/.tmux/bin/wifi /usr/local/bin/wifi
 ln -sf ${PWD}/.zsh/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 ln -sf ${PWD}/.gitignore_global ~/.gitignore_global
 ln -sf ${PWD}/.bash_profile ~/.bash_profile
+ln -sf ${PWD}/.gitconfig ~/.gitconfig
+
