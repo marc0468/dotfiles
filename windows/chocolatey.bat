@@ -21,3 +21,4 @@ choco install -y arduino
 choco install -y androidstudio
 choco install -y heroku-cli
 choco install -y python3
+choco install -y flutter
