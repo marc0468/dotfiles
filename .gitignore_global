@@ -9,5 +9,3 @@ __pycache__/
 # VS CODE
 .vscode/
 .devcontainer/
-
-Pipfile.lock
