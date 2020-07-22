@@ -19,7 +19,7 @@ if [ -e ~/.zsh/completions ]; then
   fpath=(~/.zsh/completions $fpath)
 fi
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}' '+m:{[:upper:]}={[:lower:]}'
-autoload -U compinit
+autoload -Uz compinit && compinit -i
 
 # 色を使用出来るようにする
 autoload -U colors
@@ -42,6 +42,9 @@ alias gst='git status'
 
 alias python="python3"
 alias py="python3"
+
+alias d='docker'
+alias dc='docker-compose'
 
 # tmux起動時処理
 if [ "${TERM_PROGRAM}" = "vscode" ]; then
