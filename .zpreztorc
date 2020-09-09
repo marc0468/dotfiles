@@ -38,7 +38,9 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'completion' \
-  'prompt'
+  'syntax-highlighting' \
+  'autosuggestions' \
+  'prompt' \
 
 #
 # Autosuggestions
