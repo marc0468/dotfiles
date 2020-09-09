@@ -1,15 +1,4 @@
 #!/bin/sh
-
-#----プラグインのインストール----
-git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-
-#----Preztoのインストール----
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-# 設定ファイルの作成
-setopt EXTENDED_GLOB
-for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-done
 # テーマの変更
 ln -sf ${PWD}/.zpreztorc ~/.zpreztorc
 
