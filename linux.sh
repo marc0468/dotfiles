@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# install
+sudo apt update
+sudo apt install -y \
+  vim \
+  openssh-server \
+  git-lfs \
+  tmux \
+  zsh
+
+# ssh
+ssh-keygen -t rsa -b 4096
+
+# tmux
+ln -sf ${PWD}/dotfiles/.tmux.conf ~/.tmux.conf
+
+# zsh
+chsh -s $(which zsh) ${USER}
+ln -sf ${PWD}/dotfiles/.zshrc ~/.zshrc
+ln -sf ${PWD}/dotfiles/.p10k.zsh ~/.p10k.zsh
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+
+# vim
+ln -sf ${PWD}/dotfiles/.vimrc ~/.vimrc
