@@ -35,7 +35,8 @@ ln -sf ${PWD}/dotfiles/.zshrc ~/.zshrc
 ln -sf ${PWD}/dotfiles/.p10k.zsh ~/.p10k.zsh
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
+# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
+git clone https://github.com/zdharma/fast-syntax-highlighting ~/.zsh/fast-syntax-highlighting
 
 # vim
 ln -sf ${PWD}/dotfiles/.vimrc ~/.vimrc
