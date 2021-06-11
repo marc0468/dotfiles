@@ -7,7 +7,8 @@ sudo apt install -y \
   openssh-server \
   git-lfs \
   tmux \
-  zsh
+  zsh \
+  python3-pip
 
 # ssh
 ssh-keygen -t rsa -b 4096
