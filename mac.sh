@@ -2,28 +2,12 @@
 
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-# General
-brew install --cask karabiner-elements
-brew install --cask google-japanese-ime
-brew install --cask dropbox
-# Video
-brew install --cask vlc
-brew install ffmpeg
-# Communication
-brew install --cask wechatwork
-brew install --cask wechat
-brew install --cask zoom
-# Editor
-brew install --cask typora
-brew install --cask coteditor
-# Dev
-brew install --cask android-studio
-brew install --cask docker
-brew install --cask wireshark
-brew install --cask xquartz
-brew install tmux
-brew install cmake
-brew install tree
+brew install --cask karabiner-elements google-japanese-ime dropbox  xmind \ # General
+  vlc \ # Video
+  wechatwork wechat zoom slack \ # Communication
+  visual-studio-code typora coteditor \ # Editor
+  android-studio docker wireshark xquartz visual-studio arduino \ # Dev
+brew install ffmpeg tmux cmake tree
 
 # tmux
 ln -sf ${PWD}/dotfiles/.tmux.conf ~/.tmux.conf
