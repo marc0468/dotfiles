@@ -1,0 +1,31 @@
+alias ls='ls -G'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+
+alias g='git'
+alias ga='git add'
+alias gc='git checkout'
+alias gs='git status -sb'
+alias gst='git status'
+
+alias python="python3"
+alias py="python3"
+alias pip="pip3"
+
+alias d='docker'
+alias docker-compose='docker compose'
+alias dc='docker compose'
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+alias dot='cd ~/dotfiles'
+
+# IP addresses
+alias gip="dig +short myip.opendns.com @resolver1.opendns.com"
+# alias lip="ipconfig getifaddr en0" # en0 is the default interface on macOS
