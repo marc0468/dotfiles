@@ -52,6 +52,9 @@ source ~/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 # pyen
 export PYENV_ROOT=${HOME}/.pyenv
 if [ -d "${PYENV_ROOT}" ]; then
-    export PATH=${PYENV_ROOT}/shims:$PATH
+  export PATH=${PYENV_ROOT}/shims:$PATH
+  pyenv -V > /dev/null 2>&1
+  if [ $? = 0 ]; then
     eval "$(pyenv init -)"
+  fi
 fi
