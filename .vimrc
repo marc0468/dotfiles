@@ -10,6 +10,8 @@ set backspace=indent,eol,start
 set ambiwidth=double
 " wildmenuオプションを有効(vimバーからファイルを選択できる)
 set wildmenu
+" カーソルラインの表示
+set cursorline
 
 "----------------------------------------
 " 検索

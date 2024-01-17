@@ -5,9 +5,6 @@ export SAVEHIST=1000000
 setopt hist_ignore_dups # 直前と同じコマンドラインはヒストリに追加しない
 setopt EXTENDED_HISTORY
 
-# zsh autosuggestions
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
 # 補完機能
 if [ -e ~/.zsh/completion ]; then
   fpath=(~/.zsh/completion $fpath)
@@ -23,7 +20,7 @@ colors
 # alias
 source ~/.alias
 
-# tmux起動時処理
+# tmux
 tmux -V > /dev/null 2>&1
 if [ $? = 0 ]; then
   if [ "${TERM_PROGRAM}" = "vscode" ]; then
@@ -42,14 +39,16 @@ if [ $? = 0 ]; then
     fi
   fi
 fi
-source ~/.powerlevel10k/powerlevel10k.zsh-theme
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-# source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# テーマ
+source ~/.powerlevel10k/powerlevel10k.zsh-theme
+source ~/.p10k.zsh
+
+# plugin
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
-# pyen
+# pyenv
 export PYENV_ROOT=${HOME}/.pyenv
 if [ -d "${PYENV_ROOT}" ]; then
   export PATH=${PYENV_ROOT}/shims:$PATH
