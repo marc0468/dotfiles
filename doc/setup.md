@@ -168,3 +168,49 @@ sudo apt-get -y install cuda-drivers
 ```sh
 sudo gpasswd -a $USER docker
 ```
+
+補完を有効にする。
+bash-completionがインストールされていること。
+
+```sh
+# sudo apt install bash-completion
+sudo curl https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/bash/docker -o /etc/bash_completion.d/docker.sh
+```
+
+## Windows
+
+```sh
+winget export -o WingetApp.json
+winget import -i WingetApp.json --accept-package-agreements --ignore-unavailable
+```
+
+cudaはwingetで入れるとパスも通してくれるので便利。
+
+```sh
+winget install -e --id Nvidia.CUDA -v 12.1
+```
+
+### SSH
+
+`ssh-add`が「Error connecting to agent: No such file or directory」となる場合、管理者権限で以下を実行する。
+
+```sh
+Set-Service -Name ssh-agent -StartupType Manual
+Start-Service ssh-agent
+```
+
+### WSL
+
+Windows（ホスト）のSSHキーを使う。
+参考: <https://zenn.dev/keijiek/scraps/b03e1804d15f99>
+
+```sh
+sudo apt install -y keychain
+```
+
+`~/.bashrc`に下記を追記する。
+
+```.bashrc
+/usr/bin/keychain --quiet --nogui /mnt/c/Users/ユーザ名/.ssh/秘密鍵名
+source $HOME/.keychain/`hostname`-sh
+```
