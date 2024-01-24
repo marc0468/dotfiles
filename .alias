@@ -29,3 +29,10 @@ alias dot='cd ~/dotfiles'
 # IP addresses
 alias gip="dig +short myip.opendns.com @resolver1.opendns.com"
 # alias lip="ipconfig getifaddr en0" # en0 is the default interface on macOS
+
+if [[ $(command -v bat) ]]; then
+  alias cat='bat'
+fi
+if [[ $(command -v eza) ]]; then
+  alias ls='eza --group'
+fi
