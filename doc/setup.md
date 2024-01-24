@@ -72,6 +72,33 @@ pyenv global 3.xx
 poetry config virtualenvs.in-project true
 ```
 
+### VS Code
+
+```sh
+curl -Lk 'https://update.code.visualstudio.com/{latest}/linux-deb-x64/stable' --output code.deb
+# armの場合
+curl -Lk 'https://update.code.visualstudio.com/latest/linux-deb-arm64/stable' --output code.deb
+sudo apt install ./code.deb
+```
+
+```sh
+code tunnel --accept-server-license-terms
+code tunnel --no-sleep service install
+systemctl --user status code-tunnel
+systemctl --user enable code-tunnel.service
+```
+
+サービスを削除するときは以下のコマンド。
+
+```sh
+systemctl --user stop code-tunnel.service
+systemctl --user disable code-tunnel.service
+rm /etc/systemd/system/code-tunnel
+rm /etc/systemd/system/code-tunnel symlinks that might be related
+systemctl --user daemon-reload
+systemctl --user reset-failed
+```
+
 ## Mac
 
 ### Homebrew
@@ -89,17 +116,28 @@ echo "alias cat='bat'" >> ~/.zshenv
 TODO: うまく機能していないものもある。
 
 ```sh
-defaults write com.apple.desktopservices DSDontWriteNetworkStores true #ネットワークドライブ上への.DS_Storeファイルの作成抑制
-defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true #USB上への.DS_Storeファイルの作成抑制
-defaults write com.apple.menuextra.battery ShowPercent -string "YES" # バッテリー残量を％表記に
-defaults write com.apple.menuextra.clock DateFormat -string 'EEE d MMM HH:mm:ss' # 日付、曜日、時間の表記に
-defaults write -g com.apple.mouse.tapBehavior -int 1 # タップしたときクリック
-defaults write -g AppleShowAllExtensions -bool true # 全ての拡張子のファイルを表示する
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -bool true # 三本指でドラッグ
-defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true # 三本指でドラッグ
-defaults write NSGlobalDomain KeyRepeat -int 2 # キーのリピート
-defaults write NSGlobalDomain InitialKeyRepeat -int 15 # リピート入力認識までの時間
-defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 "<dict><key>enabled</key><false/><key>value</key><dict><key>parameters</key><array><integer>65535</integer><integer>49</integer><integer>1048576</integer></array><key>type</key><string>standard</string></dict></dict>" # Spotlight検索を表示を無効化
+#ネットワークドライブ上への.DS_Storeファイルの作成抑制
+defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+#USB上への.DS_Storeファイルの作成抑制
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+# バッテリー残量を％表記に
+defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+# 日付、曜日、時間の表記に
+defaults write com.apple.menuextra.clock DateFormat -string 'EEE d MMM HH:mm:ss'
+# タップしたときクリック
+defaults write -g com.apple.mouse.tapBehavior -int 1
+# 全ての拡張子のファイルを表示する
+defaults write -g AppleShowAllExtensions -bool true
+# 三本指でドラッグ
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -bool true
+# 三本指でドラッグ
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
+# キーのリピート
+defaults write NSGlobalDomain KeyRepeat -int 2
+# リピート入力認識までの時間
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
+# Spotlight検索を表示を無効化
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 "<dict><key>enabled</key><false/><key>value</key><dict><key>parameters</key><array><integer>65535</integer><integer>49</integer><integer>1048576</integer></array><key>type</key><string>standard</string></dict></dict>"
 ```
 
 ### Docker(rancher)
