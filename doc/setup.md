@@ -107,8 +107,6 @@ systemctl --user reset-failed
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> ~/.zprofile
 brew bundle
-# brew install bat
-echo "alias cat='bat'" >> ~/.zshenv
 ```
 
 ### OS settings
@@ -171,8 +169,8 @@ sudo apt install -y \
   tmux \
   ssh \
   vim \
-  bat
-echo "alias cat='bat'" >> ~/.zshenv
+  bat \
+  eza
 ```
 
 ### GPU
