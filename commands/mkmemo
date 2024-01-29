@@ -1,0 +1,4 @@
+#!/bin/sh
+mkdir $(date +%Y)
+cd $(date +%Y)
+touch $(date +%Y%m%d).md
