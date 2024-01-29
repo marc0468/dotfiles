@@ -2,5 +2,5 @@
 
 ```sh
 cd <dotfiles root>
-(echo 'PATH=$PATH:'echo $PWD'/commands') >> ~/.zshenv
+(echo 'PATH=$PATH:'$PWD'/commands') >> ~/.zshenv
 ```
