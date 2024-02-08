@@ -30,19 +30,7 @@
 					"PackageIdentifier": "Dropbox.Dropbox"
 				},
 				{
-					"PackageIdentifier": "CodecGuide.K-LiteCodecPack.Standard"
-				},
-				{
-					"PackageIdentifier": "Mozilla.Firefox"
-				},
-				{
-					"PackageIdentifier": "OBSProject.OBSStudio"
-				},
-				{
 					"PackageIdentifier": "QNAP.Qsync"
-				},
-				{
-					"PackageIdentifier": "Valve.Steam"
 				},
 				{
 					"PackageIdentifier": "VideoLAN.VLC"
@@ -69,11 +57,23 @@
 					"PackageIdentifier": "Microsoft.VisualStudioCode"
 				},
 				{
-					"PackageIdentifier": "EpicGames.EpicGamesLauncher"
+					"PackageIdentifier": "Microsoft.PowerShell"
 				},
 				{
 					"PackageIdentifier": "Python.Python.3.11"
-				}
+				},
+				// {
+				// 	"PackageIdentifier": "CodecGuide.K-LiteCodecPack.Standard"
+				// },
+				// {
+				// 	"PackageIdentifier": "Mozilla.Firefox"
+				// },
+				// {
+				// 	"PackageIdentifier": "OBSProject.OBSStudio"
+				// },
+				// {
+				// 	"PackageIdentifier": "Valve.Steam"
+				// }
 			],
 			"SourceDetails": {
 				"Argument": "https://cdn.winget.microsoft.com/cache",
