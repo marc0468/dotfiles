@@ -42,9 +42,6 @@
 					"PackageIdentifier": "SlackTechnologies.Slack"
 				},
 				{
-					"PackageIdentifier": "Starship.Starship"
-				},
-				{
 					"PackageIdentifier": "gerardog.gsudo"
 				},
 				{
@@ -61,7 +58,7 @@
 				},
 				{
 					"PackageIdentifier": "Python.Python.3.11"
-				},
+				}
 				// {
 				// 	"PackageIdentifier": "CodecGuide.K-LiteCodecPack.Standard"
 				// },
