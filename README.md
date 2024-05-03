@@ -14,7 +14,7 @@ xcode-select --install
 
 ```sh
 git config --global user.name "Marco"
-git config --global user.email "iammarc.0468@gmail.com"
+git config --global user.email "17253707+marc0468@users.noreply.github.com"
 ```
 
 See also: [Setup](./doc/setup.md)
