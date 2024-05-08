@@ -49,6 +49,23 @@ Host *
   AddKeysToAgent yes
 ```
 
+#### SSHサーバーの設定
+
+`/etc/ssh/sshd_config`を編集。
+
+よく言われる変更すべき設定項目。
+
+* Port
+  * SSH のポート番号（デフォルトは 22 ）
+* PermitRootLogin no
+  * SSH 経由で root ユーザーへのログインを許可しない
+* PasswordAuthentication no
+  * パスワードでのログインを許可しない
+* ChallengeResponseAuthentication no
+  * パスワードに毛が生えた程度のチャレンジレスポンス認証でのログインは許可しない
+* PermitEmptyPasswords
+  * パスワード未設定でも空パスワードでのログインは許可しない
+
 ### Python
 
 #### pyenv
