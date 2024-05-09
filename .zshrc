@@ -57,3 +57,6 @@ if [ -d "${PYENV_ROOT}" ]; then
     eval "$(pyenv init -)"
   fi
 fi
+
+# kubectl
+source <(kubectl completion zsh)

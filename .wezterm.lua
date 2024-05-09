@@ -5,7 +5,7 @@ wezterm.on('update-right-status', function(window, pane)
   for _, b in ipairs(wezterm.battery_info()) do
     local icon = ''
     if b.state == 'Charging' then
-      icon = '🔌'
+      icon = '🔌 '
     elseif b.state == 'Discharging' then
       icon = '🔋'
     elseif b.state == 'Full' then

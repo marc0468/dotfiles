@@ -6,7 +6,7 @@
 #   Create a memo file in ~/memo/$(date +%Y)/$(date +%Y-%m-%d).
 # Example: mkmemo
 #   Create a memo file in ./$(date +%Y)/$(date +%Y-%m-%d).
-file="${1:-.}/$(date +%Y)/$(date +%Y-%m-%d)"
+file="${1:-.}/$(date +%Y)/$(date +%Y%m%d).md"
 mkdir -p $(dirname $file)
 if [ -e $file ]; then
   echo "File exists. ($file)"
