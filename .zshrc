@@ -59,4 +59,6 @@ if [ -d "${PYENV_ROOT}" ]; then
 fi
 
 # kubectl
-source <(kubectl completion zsh)
+if [[ $(command -v kubectl) ]]; then
+  source <(kubectl completion zsh)
+fi
