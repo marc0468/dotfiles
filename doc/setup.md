@@ -257,7 +257,7 @@ winget install -e --id Nvidia.CUDA -v 12.1
 `ssh-add`が「Error connecting to agent: No such file or directory」となる場合、管理者権限で以下を実行する。
 
 ```sh
-Set-Service -Name ssh-agent -StartupType Manual
+Get-Service -Name ssh-agent | Set-Service -StartupType Automatic
 Start-Service ssh-agent
 ```
 
