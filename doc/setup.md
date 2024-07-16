@@ -179,7 +179,7 @@ sudo ln -sf ${PWD}/.tmux/bin/wifi /usr/local/bin/wifi
 アップデートと必須ソフトのインストール。
 
 ```sh
-sudo apt update && sudo apt upgrade -y
+sudo apt update && sudo DEBIAN_FRONTEND=noninteractive apt upgrade
 sudo apt install -y \
   git \
   zsh \
