@@ -86,6 +86,8 @@ pyenv global 3.xx
 プロジェクトディレクトリ内に仮想環境を作成するように設定しておく。
 
 ```sh
+export PATH="$HOME/.local/bin:$PATH"
+
 poetry config virtualenvs.in-project true
 ```
 
