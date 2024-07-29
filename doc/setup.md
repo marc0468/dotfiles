@@ -201,6 +201,12 @@ mkdir -p ~/.local/bin
 ln -s /usr/bin/batcat ~/.local/bin/bat
 ```
 
+シェルをzshに変更する。
+
+```sh
+chsh -s /bin/zsh
+```
+
 ### GPU
 
 <https://developer.nvidia.com/cuda-downloads>からCUDAをインストールする。

@@ -48,6 +48,12 @@ source ~/.p10k.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
+# anyenv
+PATH="$HOME/.anyenv/bin:$PATH"
+if command -v anyenv 1>/dev/null 2>&1; then
+  eval "$(anyenv init -)"
+fi
+
 # pyenv
 export PYENV_ROOT=${HOME}/.pyenv
 if [ -d "${PYENV_ROOT}" ]; then
