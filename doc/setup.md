@@ -112,11 +112,9 @@ sudo apt install -y keychain
 source $HOME/.keychain/`hostname`-sh
 ```
 
-### 開発環境
+## 開発環境
 
-```sh
-```
-
+pyenvとnodeenvのインストール。
 anyenvを使う。
 <https://github.com/anyenv/anyenv>
 
@@ -127,7 +125,9 @@ anyenv install pyenv
 anyenv install nodenv
 ```
 
-#### pyenv
+### python
+
+pyenvの設定。
 
 ```sh
 # Pythonのビルドに必要なパッケージのインストール
@@ -137,15 +137,31 @@ pyenv install 3.xx
 pyenv global 3.xx
 ```
 
-#### poetry
-
+poetryの設定。
 公式の手順: <https://python-poetry.org/docs/#installation>
 
 ```sh
 curl -sSL https://install.python-poetry.org | python3 -
-export PATH="$HOME/.local/bin:$PATH"
+# export PATH="$HOME/.local/bin:$PATH"
 # プロジェクトディレクトリ内に仮想環境を作成するように設定しておく。
 poetry config virtualenvs.in-project true
+```
+
+### Docker
+
+公式の手順に従う。
+<https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository>
+Macの場合はrancherを使う。
+
+
+```sh
+# ユーザーをdockerグループに追加する。
+sudo gpasswd -a $USER docker
+
+# 補完を有効にする。
+# bash-completionがインストールされていること。
+# sudo apt install bash-completion
+sudo curl https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/bash/docker -o /etc/bash_completion.d/docker.sh
 ```
 
 ### VS Code
@@ -253,25 +269,6 @@ sudo apt-get -y install cuda-drivers
 とすれば、最新のドライバだけが綺麗にインストールされます。
 
 参考: <https://qiita.com/ksasaki/items/b20a785e1a0f610efa08>
-
-## Docker
-
-公式の手順に従う。
-<https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository>
-
-ユーザーをdockerグループに追加する。
-
-```sh
-sudo gpasswd -a $USER docker
-```
-
-補完を有効にする。
-bash-completionがインストールされていること。
-
-```sh
-# sudo apt install bash-completion
-sudo curl https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/bash/docker -o /etc/bash_completion.d/docker.sh
-```
 
 ## Windows
 
