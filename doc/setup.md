@@ -1,34 +1,70 @@
 # Setup
 
-## Common
+アップデートと必須ソフトのインストール。
 
-### Git
+```sh
+sudo apt update && sudo DEBIAN_FRONTEND=noninteractive apt upgrade
+sudo apt install -y \
+  git \
+  zsh \
+  tmux \
+  ssh \
+  vim \
+  bat
+
+# `apt`を使用して`bat`をインストールした場合、実行可能ファイルの名前が`bat`ではなく`batcat`になることがあります(他のパッケージとの名前衝突のため)。`bat -> batcat`のシンボリックリンクまたはエイリアスを設定することで、実行可能ファイル名が異なることによる問題の発生を防ぎ、他のディストリビューションと一貫性を保てます。<https://github.com/sharkdp/bat/blob/master/doc/README-ja.md#on-ubuntu-apt-%E3%82%92%E4%BD%BF%E7%94%A8>
+mkdir -p ~/.local/bin
+ln -s /usr/bin/batcat ~/.local/bin/bat
+```
+
+Gitの設定。
 
 ```sh
 git config --global user.name "Marco"
 git config --global user.email "17253707+marc0468@users.noreply.github.com"
 ```
 
-### zsh
+zshプラグインのインストール。
 
 ```sh
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k
 git clone https://github.com/zdharma-continuum/fast-syntax-highlighting ~/.zsh/fast-syntax-highlighting
+# シェルの変更
+chsh -s /bin/zsh
 ```
 
-### SSH
+## SSH
+
+SSHサーバのインストール
 
 ```sh
-ssh-keygen -t ed25519
+sudo apt install openssh-server
+```
 
+SSHサーバーの設定`/etc/ssh/sshd_config`を編集。
+よく言われる変更すべき設定項目。
+
+* Port
+  * SSHのポート番号（デフォルトは22）
+* PermitRootLogin no
+  * SSH経由でrootユーザーへのログインを許可しない
+* PasswordAuthentication no
+  * パスワードでのログインを許可しない
+* ChallengeResponseAuthentication no
+  * パスワードに毛が生えた程度のチャレンジレスポンス認証でのログインは許可しない
+* PermitEmptyPasswords
+  * パスワード未設定でも空パスワードでのログインは許可しない
+
+
+```sh
+# SSH鍵の生成
+ssh-keygen -t ed25519
 # 公開鍵を登録するファイルを作成する
 touch ~/.ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys
-
 # リモートホストに公開鍵を登録する
 ssh-copy-id -i ~/.ssh/id_ed25519.pub <user_name>@<target_host>
-
 # macは下記のコマンドで公開鍵をクリップボードにコピーできる
 cat ~/.ssh/id_ed25519.pub | pbcopy
 ```
@@ -41,6 +77,8 @@ ssh-add -K ~/.ssh/id_ed25519
 echo "ssh-add --apple-load-keychain" >> ~/.zprofile
 ```
 
+### Macの場合
+
 `.ssh/config`にmacOS特有設定を書く。
 
 ```.ssh/config
@@ -49,32 +87,52 @@ Host *
   AddKeysToAgent yes
 ```
 
-#### SSHサーバーの設定
+### Windowsの場合
 
-`/etc/ssh/sshd_config`を編集。
+`ssh-add`が「Error connecting to agent: No such file or directory」となる場合、管理者権限で以下を実行する。
 
-よく言われる変更すべき設定項目。
+```sh
+Get-Service -Name ssh-agent | Set-Service -StartupType Automatic
+Start-Service ssh-agent
+```
 
-* Port
-  * SSH のポート番号（デフォルトは 22 ）
-* PermitRootLogin no
-  * SSH 経由で root ユーザーへのログインを許可しない
-* PasswordAuthentication no
-  * パスワードでのログインを許可しない
-* ChallengeResponseAuthentication no
-  * パスワードに毛が生えた程度のチャレンジレスポンス認証でのログインは許可しない
-* PermitEmptyPasswords
-  * パスワード未設定でも空パスワードでのログインは許可しない
+### WSLの場合
 
-### Python
+Windows（ホスト）のSSHキーを使う。
+参考: <https://zenn.dev/keijiek/scraps/b03e1804d15f99>
+
+```sh
+sudo apt install -y keychain
+```
+
+`~/.bashrc`に下記を追記する。
+
+```.bashrc
+/usr/bin/keychain --quiet --nogui /mnt/c/Users/ユーザ名/.ssh/秘密鍵名
+source $HOME/.keychain/`hostname`-sh
+```
+
+### 開発環境
+
+```sh
+```
+
+anyenvを使う。
+<https://github.com/anyenv/anyenv>
+
+```sh
+git clone https://github.com/anyenv/anyenv ~/.anyenv
+echo 'export PATH="$HOME/.anyenv/bin:$PATH"' >> ~/.bashrc
+anyenv install pyenv
+anyenv install nodenv
+```
 
 #### pyenv
 
-公式の手順: <https://github.com/pyenv/pyenv?tab=readme-ov-file#installation>
-
-下記のようにデフォルトで使用するPythonを設定しておく。
-
 ```sh
+# Pythonのビルドに必要なパッケージのインストール
+sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev
+# 下記のようにデフォルトで使用するPythonを設定しておく。
 pyenv install 3.xx
 pyenv global 3.xx
 ```
@@ -83,11 +141,10 @@ pyenv global 3.xx
 
 公式の手順: <https://python-poetry.org/docs/#installation>
 
-プロジェクトディレクトリ内に仮想環境を作成するように設定しておく。
-
 ```sh
+curl -sSL https://install.python-poetry.org | python3 -
 export PATH="$HOME/.local/bin:$PATH"
-
+# プロジェクトディレクトリ内に仮想環境を作成するように設定しておく。
 poetry config virtualenvs.in-project true
 ```
 
@@ -176,37 +233,6 @@ sudo ln -sf ${PWD}/.tmux/bin/wifi /usr/local/bin/wifi
 
 ## Ubuntu
 
-### General
-
-アップデートと必須ソフトのインストール。
-
-```sh
-sudo apt update && sudo DEBIAN_FRONTEND=noninteractive apt upgrade
-sudo apt install -y \
-  git \
-  zsh \
-  tmux \
-  ssh \
-  vim \
-  bat \
-  eza
-```
-
-`apt`を使用して`bat`をインストールした場合、実行可能ファイルの名前が`bat`ではなく`batcat`になることがあります(他のパッケージとの名前衝突のため)。`bat -> batcat`のシンボリックリンクまたはエイリアスを設定することで、実行可能ファイル名が異なることによる問題の発生を防ぎ、他のディストリビューションと一貫性を保てます。
-
-<https://github.com/sharkdp/bat/blob/master/doc/README-ja.md#on-ubuntu-apt-%E3%82%92%E4%BD%BF%E7%94%A8>
-
-```sh
-mkdir -p ~/.local/bin
-ln -s /usr/bin/batcat ~/.local/bin/bat
-```
-
-シェルをzshに変更する。
-
-```sh
-chsh -s /bin/zsh
-```
-
 ### GPU
 
 <https://developer.nvidia.com/cuda-downloads>からCUDAをインストールする。
@@ -258,29 +284,4 @@ cudaはwingetで入れるとパスも通してくれるので便利。
 
 ```sh
 winget install -e --id Nvidia.CUDA -v 12.1
-```
-
-### SSH
-
-`ssh-add`が「Error connecting to agent: No such file or directory」となる場合、管理者権限で以下を実行する。
-
-```sh
-Get-Service -Name ssh-agent | Set-Service -StartupType Automatic
-Start-Service ssh-agent
-```
-
-### WSL
-
-Windows（ホスト）のSSHキーを使う。
-参考: <https://zenn.dev/keijiek/scraps/b03e1804d15f99>
-
-```sh
-sudo apt install -y keychain
-```
-
-`~/.bashrc`に下記を追記する。
-
-```.bashrc
-/usr/bin/keychain --quiet --nogui /mnt/c/Users/ユーザ名/.ssh/秘密鍵名
-source $HOME/.keychain/`hostname`-sh
 ```
