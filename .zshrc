@@ -20,26 +20,6 @@ colors
 # alias
 source ~/.alias
 
-# tmux
-tmux -V > /dev/null 2>&1
-if [ $? = 0 ]; then
-  if [ "${TERM_PROGRAM}" = "vscode" ]; then
-    :
-  elif [ "${TERM_PROGRAM}" = "WezTerm" ]; then
-    :
-  else
-    if [[ ! -n $TMUX ]]; then
-      # get the IDs
-      ID="`tmux list-sessions`"
-      if [[ -z "$ID" ]]; then
-        tmux new-session
-      fi
-      ID="`echo $ID | $PERCOL | cut -d: -f1`"
-      tmux attach-session -t "$ID"
-    fi
-  fi
-fi
-
 # テーマ
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
 source ~/.p10k.zsh

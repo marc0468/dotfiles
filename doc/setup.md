@@ -77,6 +77,31 @@ ssh-add -K ~/.ssh/id_ed25519
 echo "ssh-add --apple-load-keychain" >> ~/.zprofile
 ```
 
+### tmux
+
+tmuxの自動起動例
+
+```sh
+tmux -V > /dev/null 2>&1
+if [ $? = 0 ]; then
+  if [ "${TERM_PROGRAM}" = "vscode" ]; then
+    :
+  elif [ "${TERM_PROGRAM}" = "WezTerm" ]; then
+    :
+  else
+    if [[ ! -n $TMUX ]]; then
+      # get the IDs
+      ID="`tmux list-sessions`"
+      if [[ -z "$ID" ]]; then
+        tmux new-session
+      fi
+      ID="`echo $ID | $PERCOL | cut -d: -f1`"
+      tmux attach-session -t "$ID"
+    fi
+  fi
+fi
+```
+
 ### Macの場合
 
 `.ssh/config`にmacOS特有設定を書く。
