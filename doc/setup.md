@@ -34,6 +34,15 @@ git clone https://github.com/zdharma-continuum/fast-syntax-highlighting ~/.zsh/f
 chsh -s /bin/zsh
 ```
 
+フォントのインストール
+
+```sh
+mkdir temp_font
+cd temp_font
+curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/RobotoMono.tar.xz
+tar xvf RobotoMono.tar.xz
+```
+
 ## SSH
 
 SSHサーバのインストール
