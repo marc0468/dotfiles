@@ -12,6 +12,7 @@ fi
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}' '+m:{[:upper:]}={[:lower:]}'
 fpath+=~/.zfunc
 autoload -Uz compinit && compinit -i
+setopt AUTO_CD
 
 # 色を使用出来るようにする
 autoload -U colors
