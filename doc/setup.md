@@ -179,6 +179,7 @@ curl -sSL https://install.python-poetry.org | python3 -
 # export PATH="$HOME/.local/bin:$PATH"
 # プロジェクトディレクトリ内に仮想環境を作成するように設定しておく。
 poetry config virtualenvs.in-project true
+poetry env use 3.xx
 ```
 
 ### Docker
