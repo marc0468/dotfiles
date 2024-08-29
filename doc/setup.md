@@ -188,7 +188,6 @@ poetry env use 3.xx
 <https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository>
 Macの場合はrancherを使う。
 
-
 ```sh
 # ユーザーをdockerグループに追加する。
 sudo gpasswd -a $USER docker
@@ -197,6 +196,14 @@ sudo gpasswd -a $USER docker
 # bash-completionがインストールされていること。
 # sudo apt install bash-completion
 sudo curl https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/bash/docker -o /etc/bash_completion.d/docker.sh
+```
+
+nvidia-dockerをインストール。
+<https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html>
+以下で`nvidia-smi`が成功すればOK。
+
+```sh
+docker run --rm --gpus all ubuntu nvidia-smi
 ```
 
 ### VS Code
