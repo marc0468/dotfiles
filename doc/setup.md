@@ -155,6 +155,8 @@ anyenvを使う。
 ```sh
 git clone https://github.com/anyenv/anyenv ~/.anyenv
 echo 'export PATH="$HOME/.anyenv/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+anyenv install --init
 anyenv install pyenv
 anyenv install nodenv
 ```
