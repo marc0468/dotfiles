@@ -326,3 +326,10 @@ cudaはwingetで入れるとパスも通してくれるので便利。
 ```sh
 winget install -e --id Nvidia.CUDA -v 12.1
 ```
+
+## WSL
+
+```sh
+# GUIの文字化け対策
+sudo apt install fonts-ipafont
+```
