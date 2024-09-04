@@ -17,6 +17,23 @@ mkdir -p ~/.local/bin
 ln -s /usr/bin/batcat ~/.local/bin/bat
 ```
 
+Ubuntuの自動アップデートを無効にする場合は以下を設定する。
+
+- `/etc/apt/apt.conf.d/10periodic`
+- `/etc/apt/apt.conf.d/20auto-upgrades`
+- `/etc/apt/apt.conf.d/50unattended-upgrades`
+
+```sh
+# パッケージリストの自動アップデート
+APT::Periodic::Update-Package-Lists "1";
+# パッケージの自動アップデート
+APT::Periodic::Unattended-Upgrade "1";
+```
+
+参考:
+- <https://qiita.com/ymbk990/items/cabfc383e1c5e35eb4f9>
+- <https://skrum.co.jp/blog/ubuntu-automatic-application-of-security-updates/>
+
 Gitの設定。
 
 ```sh
