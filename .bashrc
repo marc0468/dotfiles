@@ -26,14 +26,14 @@ HISTTIMEFORMAT='%F %T '
 shopt -s checkwinsize
 
 
-# if command -v __git_ps1 > /dev/null 2>&1; then
+if command -v __git_ps1 > /dev/null 2>&1; then
   GIT_PS1_SHOWDIRTYSTATE=true
   GIT_PS1_SHOWUNTRACKEDFILES=true
   GIT_PS1_SHOWUPSTREAM=auto
   PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[$(git_color)m\]$(__git_ps1 "(%s)")\[\033[35m\][\t]\n\[\033[00m\]$ '
-# else
-#   PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[33m\]\[\033[35m\][\t]\n\[\033[00m\]$ '
-# fi
+else
+  PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[33m\]\[\033[35m\][\t]\n\[\033[00m\]$ '
+fi
 
 # If this is an xterm set the title
 if ! shopt -oq posix; then
