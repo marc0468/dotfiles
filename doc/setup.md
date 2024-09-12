@@ -60,6 +60,17 @@ curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Roboto
 tar xvf RobotoMono.tar.xz
 ```
 
+Capsをctrlに変更
+
+`/etc/default/keyboard`を編集する。
+
+```/etc/default/keyboard
+# 修正前
+XKBOPTIONS=""
+# 修正後
+XKBOPTIONS="ctrl:nocaps"
+```
+
 ## SSH
 
 SSHサーバのインストール
