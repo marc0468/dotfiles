@@ -22,10 +22,10 @@ alias dc='docker compose'
 alias k='kubectl'
 
 alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
 
 alias dot='cd ~/dotfiles'
+alias home='cd ~/${home}'
+alias c='code .'
 
 # IP addresses
 alias gip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -33,7 +33,4 @@ alias gip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 if [[ $(command -v bat) ]]; then
   alias cat='bat'
-fi
-if [[ $(command -v eza) ]]; then
-  alias ls='eza --group'
 fi
