@@ -8,7 +8,6 @@ sudo apt install -y \
   git \
   zsh \
   tmux \
-  ssh \
   vim \
   bat \
   curl \
