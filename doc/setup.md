@@ -215,6 +215,16 @@ poetry config virtualenvs.in-project true
 poetry env use 3.xx
 ```
 
+`poetry install`などが終わらないことがあった。
+`poetry -vvv add xxx`でログを見ると、`Using keyring backend 'SecretService Keyring'`で止まっている。
+`PYTHON_KEYRING_BACKEND`を設定すると回避できる。
+
+```sh
+export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
+```
+
+参考:<https://qiita.com/kino-ma/items/27fddf601f72f38d8683>
+
 ### Docker
 
 公式の手順に従う。
