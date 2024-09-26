@@ -34,3 +34,6 @@ alias gip="dig +short myip.opendns.com @resolver1.opendns.com"
 if [[ $(command -v bat) ]]; then
   alias cat='bat'
 fi
+
+alias t='tmux attach || tmux new'
+alias v='vim'
