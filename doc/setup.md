@@ -54,7 +54,8 @@ git clone https://github.com/zdharma-continuum/fast-syntax-highlighting ~/.zsh/f
 chsh -s /bin/zsh
 ```
 
-フォントのインストール
+フォントのインストール。
+`RobotoMonoNerdFontMono-Regular`をインストールする。
 
 ```sh
 mkdir temp_font
