@@ -23,6 +23,8 @@ wezterm.on('update-right-status', function(window, pane)
   })
 end)
 
+wezterm.window_close_confirmation = 'NeverPrompt'
+
 return {
   color_scheme = 'MaterialDesignColors',
   window_background_opacity = 0.85,
