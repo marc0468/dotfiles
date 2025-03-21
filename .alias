@@ -5,6 +5,7 @@ alias l='ls -CF'
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
+alias cl='clear'
 
 alias g='git'
 alias ga='git add'
