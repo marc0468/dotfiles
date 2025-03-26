@@ -34,6 +34,7 @@ APT::Periodic::Unattended-Upgrade "1";
 ```
 
 参考:
+
 - <https://qiita.com/ymbk990/items/cabfc383e1c5e35eb4f9>
 - <https://skrum.co.jp/blog/ubuntu-automatic-application-of-security-updates/>
 
@@ -86,17 +87,16 @@ sudo apt install openssh-server
 SSHサーバーの設定`/etc/ssh/sshd_config`を編集。
 よく言われる変更すべき設定項目。
 
-* Port
-  * SSHのポート番号（デフォルトは22）
-* PermitRootLogin no
-  * SSH経由でrootユーザーへのログインを許可しない
-* PasswordAuthentication no
-  * パスワードでのログインを許可しない
-* ChallengeResponseAuthentication no
-  * パスワードに毛が生えた程度のチャレンジレスポンス認証でのログインは許可しない
-* PermitEmptyPasswords
-  * パスワード未設定でも空パスワードでのログインは許可しない
-
+- Port
+  - SSHのポート番号（デフォルトは22）
+- PermitRootLogin no
+  - SSH経由でrootユーザーへのログインを許可しない
+- PasswordAuthentication no
+  - パスワードでのログインを許可しない
+- ChallengeResponseAuthentication no
+  - パスワードに毛が生えた程度のチャレンジレスポンス認証でのログインは許可しない
+- PermitEmptyPasswords
+  - パスワード未設定でも空パスワードでのログインは許可しない
 
 ```sh
 # SSH鍵の生成
@@ -284,6 +284,7 @@ systemctl --user reset-failed
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> ~/.zprofile
+# brew bundle dump
 brew bundle
 ```
 
