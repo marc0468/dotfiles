@@ -180,17 +180,14 @@ source $HOME/.keychain/`hostname`-sh
 
 ## 開発環境
 
-pyenvとnodeenvのインストール。
-anyenvを使う。
-<https://github.com/anyenv/anyenv>
+### mise
+
+<https://github.com/jdx/mise?tab=readme-ov-file#quickstart>
 
 ```sh
-git clone https://github.com/anyenv/anyenv ~/.anyenv
-echo 'export PATH="$HOME/.anyenv/bin:$PATH"' >> ~/.bashrc
-source ~/.bashrc
-anyenv install --init
-anyenv install pyenv
-anyenv install nodenv
+# Install
+curl https://mise.run | sh
+echo 'eval "$(~/.local/bin/mise activate zsh)"' >> ~/.zshenv
 ```
 
 ### python
@@ -204,6 +201,16 @@ sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev librea
 pyenv install 3.xx
 pyenv global 3.xx
 ```
+
+#### uv
+
+<https://github.com/astral-sh/uv?tab=readme-ov-file#installation>
+
+```sh
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+#### Poetry
 
 poetryの設定。
 公式の手順: <https://python-poetry.org/docs/#installation>
