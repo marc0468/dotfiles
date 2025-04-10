@@ -133,14 +133,9 @@ echo 'eval "$(~/.local/bin/mise activate zsh)"' >> ~/.zshenv
 
 ### python
 
-pyenvの設定。
-
 ```sh
-# Pythonのビルドに必要なパッケージのインストール
-sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev
-# 下記のようにデフォルトで使用するPythonを設定しておく。
-pyenv install 3.xx
-pyenv global 3.xx
+mise install python@3.11
+mise use python@3.11 --global
 ```
 
 #### uv
@@ -151,25 +146,16 @@ pyenv global 3.xx
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-#### Poetry
-
-poetryの設定。
-公式の手順: <https://python-poetry.org/docs/#installation>
-
 ```sh
-curl -sSL https://install.python-poetry.org | python3 -
-# export PATH="$HOME/.local/bin:$PATH"
-# プロジェクトディレクトリ内に仮想環境を作成するように設定しておく。
-poetry config virtualenvs.in-project true
-poetry env use 3.xx
+# miseを使ってuvをインストール
+mise use uv@latest
+
+# プロジェクトの初期化(再配布用のアプリケーションとして初期化)
+uv init --app --package
+
+# パッケージのインストール(例としてrequests, pandas, numpyをインストール)
+uv add requests pandas numpy
+
+# 開発用パッケージのインストール(例としてpytest, pytest-cov, pytest-mockをインストール)
+uv add --dev pytest pytest-cov pytest-mock
 ```
-
-`poetry install`などが終わらないことがあった。
-`poetry -vvv add xxx`でログを見ると、`Using keyring backend 'SecretService Keyring'`で止まっている。
-`PYTHON_KEYRING_BACKEND`を設定すると回避できる。
-
-```sh
-export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
-```
-
-参考:<https://qiita.com/kino-ma/items/27fddf601f72f38d8683>
