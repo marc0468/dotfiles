@@ -147,9 +147,6 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
 ```sh
-# miseを使ってuvをインストール
-mise use uv@latest
-
 # プロジェクトの初期化(再配布用のアプリケーションとして初期化)
 uv init --app --package
 
