@@ -50,3 +50,9 @@ bind 'set completion-ignore-case on'
 if [ -f ~/.alias ]; then
     . ~/.alias
 fi
+
+# uv
+if [[ $(command -v uv) ]]; then
+  # command completion for uv
+  eval "$(uv generate-shell-completion bash)"
+fi

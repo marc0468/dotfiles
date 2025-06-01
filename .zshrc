@@ -34,6 +34,12 @@ if [[ $(command -v mise) ]]; then
   eval "$(mise activate zsh)"
   eval "$(mise activate --shims)"
 fi
+# uv
+if [[ $(command -v uv) ]]; then
+  # command completion for uv
+  eval "$(uv generate-shell-completion zsh)"
+fi
+
 
 # kubectl
 if [[ $(command -v kubectl) ]]; then
