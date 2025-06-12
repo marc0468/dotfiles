@@ -40,7 +40,6 @@ if [[ $(command -v uv) ]]; then
   eval "$(uv generate-shell-completion zsh)"
 fi
 
-
 # kubectl
 if [[ $(command -v kubectl) ]]; then
   source <(kubectl completion zsh)
