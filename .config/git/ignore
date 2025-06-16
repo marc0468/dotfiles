@@ -4,3 +4,5 @@ build/**
 __pycache__
 .env
 .venv
+
+**/.claude/settings.local.json

@@ -27,6 +27,7 @@ alias ..='cd ..'
 alias dot='cd ~/dotfiles'
 alias home='cd ~/${home}'
 alias c='code .'
+alias cc='claude'
 
 # IP addresses
 alias gip="dig +short myip.opendns.com @resolver1.opendns.com"
