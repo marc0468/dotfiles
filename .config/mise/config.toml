@@ -8,5 +8,6 @@ run = "shuf -n 1 -e Alice Bob Charlie Dave"
 [tools]
 node = "24"
 python = "3.11"
+uv = "latest"
 "npm:@anthropic-ai/claude-code" = "latest"
 "npm:@google/gemini-cli" = "latest"
