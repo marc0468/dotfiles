@@ -21,6 +21,12 @@ ln -sf ${PWD}/.config/git/ignore ~/.config/git/ignore
 mkdir -p ~/.config/bat
 ln -sf ${PWD}/.config/bat/config ~/.config/bat/config
 
-# karabiner
-mkdir -p ~/.config/karabiner
-ln -sf ${PWD}/.config/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
+# mise
+mkdir -p ~/.config/mise
+ln -sf ${PWD}/.config/mise/config.yaml ~/.config/mise/config.yaml
+
+# karabiner Macのみ
+if [ "$(uname)" == "Darwin" ]; then
+    mkdir -p ~/.config/karabiner
+    ln -sf ${PWD}/.config/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
+fi
