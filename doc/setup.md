@@ -131,28 +131,4 @@ curl https://mise.run | sh
 echo 'eval "$(~/.local/bin/mise activate zsh)"' >> ~/.zshenv
 ```
 
-### python
-
-```sh
-mise install python@3.11
-mise use python@3.11 --global
-```
-
-#### uv
-
-<https://github.com/astral-sh/uv?tab=readme-ov-file#installation>
-
-```sh
-curl -LsSf https://astral.sh/uv/install.sh | sh
-```
-
-```sh
-# プロジェクトの初期化(再配布用のアプリケーションとして初期化)
-uv init --app --package
-
-# パッケージのインストール(例としてrequests, pandas, numpyをインストール)
-uv add requests pandas numpy
-
-# 開発用パッケージのインストール(例としてpytest, pytest-cov, pytest-mockをインストール)
-uv add --dev pytest pytest-cov pytest-mock
-```
+`mise i`で[config.toml](.config/mise/config.toml)に記載されているパッケージをインストールできる。
