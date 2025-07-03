@@ -56,3 +56,7 @@ if [[ $(command -v uv) ]]; then
   # command completion for uv
   eval "$(uv generate-shell-completion bash)"
 fi
+
+if [[ -f ~/.local/bin/mise ]]; then
+  eval "$(~/.local/bin/mise activate bash)"
+fi
