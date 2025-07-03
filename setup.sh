@@ -23,7 +23,7 @@ ln -sf ${PWD}/.config/bat/config ~/.config/bat/config
 
 # mise
 mkdir -p ~/.config/mise
-ln -sf ${PWD}/.config/mise/config.yaml ~/.config/mise/config.yaml
+ln -sf ${PWD}/.config/mise/config.toml ~/.config/mise/config.toml
 
 # karabiner Macのみ
 if [ "$(uname)" == "Darwin" ]; then
