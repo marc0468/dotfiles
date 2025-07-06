@@ -30,3 +30,7 @@ if [ "$(uname)" == "Darwin" ]; then
     mkdir -p ~/.config/karabiner
     ln -sf ${PWD}/.config/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
 fi
+
+# claude
+mkdir -p ~/.claude
+ln -sf ${PWD}/.claude/settings.json ~/.claude/settings.json
