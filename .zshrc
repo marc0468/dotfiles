@@ -32,7 +32,7 @@ source ~/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 # mise
 if [[ $(command -v mise) ]]; then
   eval "$(mise activate zsh)"
-  eval "$(mise activate --shims)"
+  # eval "$(mise activate --shims)"
 fi
 # uv
 if [[ $(command -v uv) ]]; then
