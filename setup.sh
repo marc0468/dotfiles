@@ -34,3 +34,8 @@ fi
 # claude
 mkdir -p ~/.claude
 ln -sf ${PWD}/.claude/settings.json ~/.claude/settings.json
+
+# codex
+mkdir -p ~/.codex
+ln -sf ${PWD}/.codex/config.toml ~/.codex/config.toml
+ln -sf ${PWD}/.codex/AGENTS.md ~/.codex/AGENTS.md

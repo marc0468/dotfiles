@@ -1,0 +1,6 @@
+model_reasoning_effort = "high"
+hide_agent_reasoning = true
+network_access = true
+
+[tools]
+web_search = true
