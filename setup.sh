@@ -39,3 +39,4 @@ ln -sf ${PWD}/.claude/settings.json ~/.claude/settings.json
 mkdir -p ~/.codex
 ln -sf ${PWD}/.codex/config.toml ~/.codex/config.toml
 ln -sf ${PWD}/.codex/AGENTS.md ~/.codex/AGENTS.md
+ln -sf ${PWD}/.codex/prompts ~/.codex/prompts
