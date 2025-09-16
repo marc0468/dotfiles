@@ -1,14 +1,14 @@
 [settings]
 idiomatic_version_file_enable_tools = []
 
-[tasks.random-member]
-description = "メンバーをランダムに選ぶ"
-run = "shuf -n 1 -e Alice Bob Charlie Dave"
-
 [tools]
+# Core tools
 node = "24"
 python = "3.11"
-uv = "latest"
+
 "npm:@anthropic-ai/claude-code" = "latest"
 "npm:@google/gemini-cli" = "latest"
 "npm:@openai/codex" = "latest"
+
+uv = "latest"
+ruff = "latest"
