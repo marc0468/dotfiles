@@ -12,6 +12,7 @@ alias ga='git add'
 alias gc='git checkout'
 alias gs='git status -sb'
 alias gst='git status'
+alias gl='git log --graph --all --decorate --pretty=format:"[%cn](%cd)%d %s" --date=short'
 
 alias python="python3"
 alias py="python3"
