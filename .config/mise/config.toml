@@ -6,8 +6,6 @@ idiomatic_version_file_enable_tools = []
 node = "24"
 python = "3.11"
 
-"npm:@anthropic-ai/claude-code" = "latest"
-"npm:@google/gemini-cli" = "latest"
 "npm:@openai/codex" = "latest"
 
 uv = "latest"
