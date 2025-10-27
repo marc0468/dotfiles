@@ -8,6 +8,7 @@ experimental = true
 node = "lts"
 python = "3.11"
 # python = "miniconda3-latest"
+go = "latest"
 
 "npm:@openai/codex" = "latest"
 "pipx:huggingface_hub[cli]" = "latest"
