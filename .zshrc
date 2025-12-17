@@ -29,6 +29,8 @@ source ~/.p10k.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
+export PATH="$HOME/.local/bin:$PATH"
+
 # mise
 if [[ $(command -v mise) ]]; then
   eval "$(mise activate zsh)"
@@ -44,5 +46,3 @@ fi
 if [[ $(command -v kubectl) ]]; then
   source <(kubectl completion zsh)
 fi
-
-export PATH="$HOME/.local/bin:$PATH"
