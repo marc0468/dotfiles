@@ -1,0 +1,56 @@
+alias ls='ls --color=auto'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+alias cl='clear'
+
+alias g='git'
+alias ga='git add'
+alias gc='git checkout'
+alias gs='git status -sb'
+alias gst='git status'
+alias gl='git log --graph --all --decorate --pretty=format:"[%cn](%cd)%d %s" --date=short'
+
+alias python="python3"
+alias py="python3"
+alias pip="pip3"
+
+alias d='docker'
+alias docker-compose='docker compose'
+alias dc='docker compose'
+alias k='kubectl'
+
+alias ..='cd ..'
+
+alias dot='cd ~/dotfiles'
+alias home='cd ~/${home}'
+
+# AI tools
+alias c='code .'
+alias cx='codex'
+alias cxr='codex resume'
+alias ge='gemini'
+
+# IP addresses
+alias gip="dig +short myip.opendns.com @resolver1.opendns.com"
+# alias lip="ipconfig getifaddr en0" # en0 is the default interface on macOS
+
+if [[ $(command -v bat) ]]; then
+  alias cat='bat'
+fi
+
+alias t='tmux attach || tmux new'
+alias v='vim'
+
+if [[ $(command -v eza) ]]; then
+  alias ei="eza --git"
+  alias ea="eza -la --icons --git"
+  alias ee="eza -aahl --icons --git"
+  alias et="eza -T -L 3 -a -I 'node_modules|.git|.cache' --icons"
+  alias ls=ei
+  alias la=ea
+  alias ll=ee
+fi

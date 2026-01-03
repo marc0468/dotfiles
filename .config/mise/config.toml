@@ -1,0 +1,25 @@
+[settings]
+idiomatic_version_file_enable_tools = []
+python.uv_venv_auto = true
+experimental = true
+
+[tools]
+# Core tools
+node = "lts"
+python = "3.11"
+# python = "miniconda3-latest"
+go = "latest"
+
+"npm:@openai/codex" = "latest"
+"npm:@google/gemini-cli" = "latest"
+"pipx:huggingface_hub[cli]" = "latest"
+
+uv = "latest"
+ruff = "latest"
+
+aws-cli = "latest"
+neovim = "latest"
+hadolint = "latest"
+bat = "latest"
+eza = "latest"
+gh = "latest"

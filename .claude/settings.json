@@ -1,0 +1,15 @@
+{
+    "permissions": {
+        "allow": [
+            "Bash(npm:*)",
+            "Bash(docker:*)",
+            "Bash(uv:*)",
+            "Bash(git commit:*)",
+            "Bash(ls:*)",
+            "Bash(pwd:*)",
+            "WebFetch(domain:*)"
+        ]
+    },
+    "cleanupPeriodDays": 60
+}
+

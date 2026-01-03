@@ -1,0 +1,6 @@
+model_reasoning_effort = "xhigh"
+hide_agent_reasoning = true
+network_access = true
+
+[features]
+web_search_request = true
