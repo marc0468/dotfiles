@@ -31,6 +31,7 @@ local mod = is_darwin and 'CMD' or (is_windows and 'CTRL' or 'SUPER')
 local config = {
   color_scheme = 'MaterialDesignColors',
   window_background_opacity = 0.85,
+  macos_window_background_blur = 10,
   font = wezterm.font('RobotoMono Nerd Font Mono'),
   font_size = 12,
   show_update_window = false,
