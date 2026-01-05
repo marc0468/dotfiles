@@ -19,7 +19,7 @@ autoload -U colors
 colors
 
 # テーマ
-source ~/.powerlevel10k/powerlevel10k.zsh-theme
+source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.p10k.zsh
 
 # plugin
