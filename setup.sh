@@ -4,7 +4,6 @@ cd `dirname $0`
 # general
 ln -sf ${PWD}/.vimrc ~/.vimrc
 ln -sf ${PWD}/.alias ~/.alias
-ln -sf ${PWD}/.tmux.conf ~/.tmux.conf
 
 # shell
 ln -sf ${PWD}/.bashrc ~/.bashrc
@@ -26,12 +25,15 @@ ln -sfn ${PWD}/.codex/prompts ~/.codex/prompts
 ln -sf ${PWD}/.config/nvim/init.lua ~/.config/nvim/init.lua
 
 # .config dir
-shopt -s nullglob
+shopt -s nullglob dotglob
 
-settings_list=(bat git mise wezterm)
+settings_list=(bat git mise tmux wezterm)
 [[ $(uname) == Darwin ]] && settings_list+=(karabiner)
 
 for setting in "${settings_list[@]}"; do
   mkdir -p "$HOME/.config/$setting"
-  ln -sf "$PWD/.config/$setting/"* "$HOME/.config/$setting/"
+  for file in "$PWD/.config/$setting"/*; do
+    [ -e "$file" ] || continue
+    ln -sf "$file" "$HOME/.config/$setting/$(basename "$file")"
+  done
 done
