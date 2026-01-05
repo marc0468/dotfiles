@@ -18,9 +18,6 @@ setopt AUTO_CD
 autoload -U colors
 colors
 
-# alias
-source ~/.alias
-
 # テーマ
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
 source ~/.p10k.zsh
@@ -46,3 +43,6 @@ fi
 if [[ $(command -v kubectl) ]]; then
   source <(kubectl completion zsh)
 fi
+
+# alias
+source ~/.alias
