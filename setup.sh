@@ -21,6 +21,10 @@ ln -sf ${PWD}/.codex/config.toml ~/.codex/config.toml
 ln -sf ${PWD}/.codex/AGENTS.md ~/.codex/AGENTS.md
 ln -sfn ${PWD}/.codex/prompts ~/.codex/prompts
 
+# gemini
+mkdir -p ~/.gemini
+ln -sf ${PWD}/.gemini/GEMINI.md ~/.gemini/GEMINI.md
+
 # neovim
 ln -sf ${PWD}/.config/nvim/init.lua ~/.config/nvim/init.lua
 
