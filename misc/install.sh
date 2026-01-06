@@ -1,5 +1,8 @@
 #!/bin/bash
-cd "$(dirname "$0")"
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR"
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # Xcode Command Line Tools
@@ -9,12 +12,12 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     fi
 
     # homebrew
-    if ! type brew &> /dev/null ; then
+    if ! command -v brew &> /dev/null ; then
         echo "homebrewをinstallします..."
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     fi
     echo "Brewfile記載のパッケージをinstallします..."
-    brew bundle --file=Brewfile
+    brew bundle --file="$SCRIPT_DIR/Brewfile"
 fi
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
@@ -37,7 +40,8 @@ curl https://mise.run | sh
 
 # zsh
 echo "zsh pluginsをinstallします..."
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.zsh/powerlevel10k
-git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-git clone https://github.com/zdharma-continuum/fast-syntax-highlighting ~/.zsh/fast-syntax-highlighting
+mkdir -p "$HOME/.zsh"
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$HOME/.zsh/powerlevel10k"
+git clone https://github.com/zsh-users/zsh-autosuggestions "$HOME/.zsh/zsh-autosuggestions"
+git clone https://github.com/zdharma-continuum/fast-syntax-highlighting "$HOME/.zsh/fast-syntax-highlighting"
 chsh -s /bin/zsh
