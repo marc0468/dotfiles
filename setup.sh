@@ -1,5 +1,6 @@
 #!/bin/bash
-cd `dirname $0`
+set -euo pipefail
+cd "$(dirname "$0")"
 
 # general
 ln -sf ${PWD}/.vimrc ~/.vimrc
@@ -26,6 +27,7 @@ mkdir -p ~/.gemini
 ln -sf ${PWD}/.gemini/GEMINI.md ~/.gemini/GEMINI.md
 
 # neovim
+mkdir -p ~/.config/nvim
 ln -sf ${PWD}/.config/nvim/init.lua ~/.config/nvim/init.lua
 
 # .config dir

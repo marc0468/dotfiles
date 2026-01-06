@@ -19,7 +19,7 @@ fi
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # apt packages linux
-    sudo apt update && sudo DEBIAN_FRONTEND=noninteractive apt upgrade
+    sudo apt update && sudo env DEBIAN_FRONTEND=noninteractive apt upgrade -y
     sudo apt install -y \
     git \
     zsh \
