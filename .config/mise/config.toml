@@ -20,7 +20,6 @@ uv = "latest"
 ruff = "latest"
 
 aws-cli = "latest"
-neovim = "latest"
 hadolint = "latest"
 bat = "latest"
 eza = "latest"
