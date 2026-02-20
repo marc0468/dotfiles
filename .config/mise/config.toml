@@ -12,6 +12,8 @@ go = "latest"
 
 "npm:@openai/codex" = "latest"
 "npm:@google/gemini-cli" = "latest"
+"npm:@github/copilot" = "latest"
+
 "pipx:huggingface_hub[cli]" = "latest"
 
 uv = "latest"

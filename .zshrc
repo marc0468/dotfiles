@@ -4,6 +4,7 @@ export HISTSIZE=10000
 export SAVEHIST=1000000
 setopt hist_ignore_dups # 直前と同じコマンドラインはヒストリに追加しない
 setopt EXTENDED_HISTORY
+setopt interactivecomments # コメントを許可
 
 # 補完機能
 if [ -e ~/.zsh/completion ]; then
@@ -29,9 +30,8 @@ source ~/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 export PATH="$HOME/.local/bin:$PATH"
 
 # mise
-if [[ $(command -v mise) ]]; then
-  eval "$(mise activate zsh)"
-  # eval "$(mise activate --shims)"
+if [[ -x "$HOME/.local/bin/mise" ]]; then
+  eval "$("$HOME/.local/bin/mise" activate zsh)"
 fi
 # uv
 if [[ $(command -v uv) ]]; then

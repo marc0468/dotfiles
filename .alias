@@ -1,7 +1,6 @@
 alias ls='ls --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
-alias l='ls -CF'
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
@@ -44,6 +43,7 @@ fi
 
 alias t='tmux attach || tmux new'
 alias v='vim'
+alias n='nvim'
 
 if [[ $(command -v eza) ]]; then
   alias ei="eza --git"
