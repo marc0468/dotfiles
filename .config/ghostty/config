@@ -1,0 +1,5 @@
+# 背景を透過
+background-opacity = 0.85
+# ブラー（すりガラス効果）
+background-blur-radius = 15
+maximize = true

@@ -31,7 +31,7 @@ ln -sf ${PWD}/.config/nvim/init.lua ~/.config/nvim/init.lua
 # .config dir
 shopt -s nullglob dotglob
 
-settings_list=(bat git mise tmux wezterm)
+settings_list=(bat git mise tmux wezterm ghostty)
 [[ $(uname) == Darwin ]] && settings_list+=(karabiner)
 
 for setting in "${settings_list[@]}"; do
