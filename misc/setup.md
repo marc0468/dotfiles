@@ -1,94 +1,21 @@
 # Setup
 
-Gitの設定。
+## OS別の設定
+
+### Mac
+
+homebrewは[install.sh](./install.sh)でインストールできる。
 
 ```sh
-git config --global user.name "Marco"
-git config --global user.email "17253707+marc0468@users.noreply.github.com"
+# Brewfileからインストール
+brew bundle
+# Brewfileへdump
+brew bundle dump
 ```
 
-## SSH
+#### OS settings
 
-SSHサーバのインストール
-
-```sh
-sudo apt install openssh-server
-```
-
-SSHサーバーの設定`/etc/ssh/sshd_config`を編集。
-よく言われる変更すべき設定項目。
-
-- Port
-  - SSHのポート番号（デフォルトは22）
-- PermitRootLogin no
-  - SSH経由でrootユーザーへのログインを許可しない
-- PasswordAuthentication no
-  - パスワードでのログインを許可しない
-- ChallengeResponseAuthentication no
-  - パスワードに毛が生えた程度のチャレンジレスポンス認証でのログインは許可しない
-- PermitEmptyPasswords
-  - パスワード未設定でも空パスワードでのログインは許可しない
-
-```sh
-# SSH鍵の生成
-ssh-keygen -t ed25519
-# 公開鍵を登録するファイルを作成する
-touch ~/.ssh/authorized_keys
-chmod 600 ~/.ssh/authorized_keys
-# リモートホストに公開鍵を登録する
-ssh-copy-id -i ~/.ssh/id_ed25519.pub <user_name>@<target_host>
-# macは下記のコマンドで公開鍵をクリップボードにコピーできる
-cat ~/.ssh/id_ed25519.pub | pbcopy
-```
-
-keychainに秘密鍵を登録する`-K`オプションを使い、再起動のたびに`ssh-add`する手間を省く。
-
-```sh
-ssh-add -K ~/.ssh/id_ed25519
-# 再起動してもkeychainから呼び出す
-echo "ssh-add --apple-load-keychain" >> ~/.zprofile
-```
-
-### Macの場合
-
-`.ssh/config`にmacOS特有設定を書く。
-
-```.ssh/config
-Host *
-  UseKeychain yes
-  AddKeysToAgent yes
-```
-
-### Windowsの場合
-
-`ssh-add`が「Error connecting to agent: No such file or directory」となる場合、管理者権限で以下を実行する。
-
-```sh
-Get-Service -Name ssh-agent | Set-Service -StartupType Automatic
-Start-Service ssh-agent
-```
-
-### WSLの場合
-
-Windows（ホスト）のSSHキーを使う。
-参考: <https://zenn.dev/keijiek/scraps/b03e1804d15f99>
-
-```sh
-sudo apt install -y keychain
-```
-
-`~/.bashrc`に下記を追記する。
-
-```.bashrc
-/usr/bin/keychain --quiet --nogui /mnt/c/Users/ユーザ名/.ssh/秘密鍵名
-source $HOME/.keychain/`hostname`-sh
-```
-
-## Mac
-
-### OS settings
-
-TODO: うまく機能していないものもある。
+うまく機能していないものもある。
 
 ```sh
 #ネットワークドライブ上への.DS_Storeファイルの作成抑制
@@ -111,13 +38,11 @@ defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool t
 defaults write NSGlobalDomain KeyRepeat -int 2
 # リピート入力認識までの時間
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
-# Spotlight検索を表示を無効化
-defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 "<dict><key>enabled</key><false/><key>value</key><dict><key>parameters</key><array><integer>65535</integer><integer>49</integer><integer>1048576</integer></array><key>type</key><string>standard</string></dict></dict>"
 ```
 
-## Ubuntu
+### Ubuntu
 
-### アップデートと必須ソフトのインストール
+アップデートと必須ソフトのインストール
 
 ```sh
 sudo apt update && sudo DEBIAN_FRONTEND=noninteractive apt upgrade
@@ -126,18 +51,14 @@ sudo apt install -y \
   zsh \
   tmux \
   vim \
-  bat \
   curl \
   htop \
   nvtop \
-  tree
-
-# `apt`を使用して`bat`をインストールした場合、実行可能ファイルの名前が`bat`ではなく`batcat`になることがあります(他のパッケージとの名前衝突のため)。`bat -> batcat`のシンボリックリンクまたはエイリアスを設定することで、実行可能ファイル名が異なることによる問題の発生を防ぎ、他のディストリビューションと一貫性を保てます。<https://github.com/sharkdp/bat/blob/master/doc/README-ja.md#on-ubuntu-apt-%E3%82%92%E4%BD%BF%E7%94%A8>
-mkdir -p ~/.local/bin
-ln -s /usr/bin/batcat ~/.local/bin/bat
+  tree \
+  bash-completion
 ```
 
-### Ubuntuの自動アップデートを無効にする
+#### Ubuntuの自動アップデートを無効にする
 
 - `/etc/apt/apt.conf.d/10periodic`
 - `/etc/apt/apt.conf.d/20auto-upgrades`
@@ -155,7 +76,7 @@ APT::Periodic::Unattended-Upgrade "1";
 - <https://qiita.com/ymbk990/items/cabfc383e1c5e35eb4f9>
 - <https://skrum.co.jp/blog/ubuntu-automatic-application-of-security-updates/>
 
-### フォントのインストール
+#### フォントのインストール
 
 `RobotoMonoNerdFontMono-Regular`をインストールする。
 
@@ -166,7 +87,7 @@ curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Roboto
 tar xvf RobotoMono.tar.xz
 ```
 
-### Capsをctrlに変更
+#### Capsをctrlに変更
 
 `/etc/default/keyboard`を編集する。
 
@@ -177,7 +98,7 @@ XKBOPTIONS=""
 XKBOPTIONS="ctrl:nocaps"
 ```
 
-### Docker
+#### Docker
 
 インストールは公式の手順に従う。
 <https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository>
@@ -188,7 +109,6 @@ sudo gpasswd -a $USER docker
 
 # 補完を有効にする。
 # bash-completionがインストールされていること。
-# sudo apt install bash-completion
 sudo curl https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/bash/docker -o /etc/bash_completion.d/docker.sh
 ```
 
@@ -200,7 +120,7 @@ nvidia-dockerをインストール。
 docker run --rm --gpus all ubuntu nvidia-smi
 ```
 
-### CUDA
+#### CUDA
 
 <https://developer.nvidia.com/cuda-downloads>からCUDAをインストールする。
 
@@ -221,11 +141,7 @@ sudo apt-get -y install cuda-drivers
 
 参考: <https://qiita.com/ksasaki/items/b20a785e1a0f610efa08>
 
-## Windows
-
-WSLのセットアップは[ubuntu.md](ubuntu.md)も参照すること
-
-### 必要なソフトウェアのインストール
+### Windows
 
 ```sh
 winget export -o WingetApp.json
@@ -258,4 +174,85 @@ sudo apt-get -y install cuda-toolkit-12-9
 # CUDAのパスを通す
 export PATH="/usr/local/cuda/bin:$PATH" >> ~/.zshenv
 export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH" >> ~/.zshenv
+```
+
+## SSH
+
+### Serverの設定
+
+SSHサーバのインストール
+
+```sh
+sudo apt install openssh-server
+```
+
+SSHサーバーの設定`/etc/ssh/sshd_config`を編集。
+よく言われる変更すべき設定項目。
+
+- Port
+  - SSHのポート番号（デフォルトは22）
+- PermitRootLogin no
+  - SSH経由でrootユーザーへのログインを許可しない
+- PasswordAuthentication no
+  - パスワードでのログインを許可しない
+- ChallengeResponseAuthentication no
+  - パスワードに毛が生えた程度のチャレンジレスポンス認証でのログインは許可しない
+- PermitEmptyPasswords
+  - パスワード未設定でも空パスワードでのログインは許可しない
+
+### clientの設定
+
+```sh
+# SSH鍵の生成
+ssh-keygen -t ed25519
+# 公開鍵を登録するファイルを作成する
+touch ~/.ssh/authorized_keys
+chmod 600 ~/.ssh/authorized_keys
+# リモートホストに公開鍵を登録する
+ssh-copy-id -i ~/.ssh/id_ed25519.pub <user_name>@<target_host>
+# macは下記のコマンドで公開鍵をクリップボードにコピーできる
+cat ~/.ssh/id_ed25519.pub | pbcopy
+```
+
+keychainに秘密鍵を登録する`-K`オプションを使い、再起動のたびに`ssh-add`する手間を省く。
+
+```sh
+ssh-add -K ~/.ssh/id_ed25519
+# 再起動してもkeychainから呼び出す
+echo "ssh-add --apple-load-keychain" >> ~/.zprofile
+```
+
+#### Macの場合
+
+`.ssh/config`にmacOS特有設定を書く。
+
+```.ssh/config
+Host *
+  UseKeychain yes
+  AddKeysToAgent yes
+```
+
+#### Windowsの場合
+
+`ssh-add`が「Error connecting to agent: No such file or directory」となる場合、管理者権限で以下を実行する。
+
+```sh
+Get-Service -Name ssh-agent | Set-Service -StartupType Automatic
+Start-Service ssh-agent
+```
+
+#### WSLの場合
+
+Windows（ホスト）のSSHキーを使う。
+参考: <https://zenn.dev/keijiek/scraps/b03e1804d15f99>
+
+```sh
+sudo apt install -y keychain
+```
+
+`~/.bashrc`に下記を追記する。
+
+```.bashrc
+/usr/bin/keychain --quiet --nogui /mnt/c/Users/ユーザ名/.ssh/秘密鍵名
+source $HOME/.keychain/`hostname`-sh
 ```
