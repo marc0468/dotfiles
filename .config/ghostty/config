@@ -1,18 +1,28 @@
+# ============display============
 # theme = Solarized Osaka Night
-# font-family = "RobotoMono Nerd Font Mono"
+theme = Ayu Mirage
 background-opacity = 0.85
 background-blur-radius = 15
 unfocused-split-opacity = 0.6
-
-copy-on-select = true
-clipboard-read = allow
-clipboard-write = allow
-
-# macOS 設定
+cursor-style = block
 macos-titlebar-style = tabs
 macos-option-as-alt = true
 
-# --- keybind ---
+# ============font============
+# font-family = RobotoMono Nerd Font Mono
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
+
+# ============clipbord============
+copy-on-select = clipboard
+clipboard-read = allow
+clipboard-write = allow
+
+shell-integration = zsh
+# shell-integration-features = ssh-terminfo,ssh-env
+
+# ============keybind============
 keybind = cmd+shift+-=new_split:down
 keybind = cmd+shift+\=new_split:right
 
