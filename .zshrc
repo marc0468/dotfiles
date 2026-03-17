@@ -1,4 +1,7 @@
 # ZSH
+export XDG_CONFIG_HOME="$HOME/.config"
+export EDITOR=vim
+export VISUAL=vim
 
 ## History
 export HISTFILE=~/.zsh/.zsh_history
@@ -25,8 +28,6 @@ setopt hist_expand
 
 ## その他
 setopt interactivecomments # コメントを許可
-export EDITOR=vim
-export VISUAL=vim
 
 ### 補完機能
 if [ -e ~/.zsh/completion ]; then
