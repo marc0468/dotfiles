@@ -1,11 +1,16 @@
-theme = Solarized Osaka Night
-font-family = "RobotoMono Nerd Font Mono"
+# theme = Solarized Osaka Night
+# font-family = "RobotoMono Nerd Font Mono"
 background-opacity = 0.85
 background-blur-radius = 15
+unfocused-split-opacity = 0.6
 
 copy-on-select = true
 clipboard-read = allow
 clipboard-write = allow
+
+# macOS 設定
+macos-titlebar-style = tabs
+macos-option-as-alt = true
 
 # --- keybind ---
 keybind = cmd+shift+-=new_split:down
