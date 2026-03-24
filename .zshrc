@@ -43,6 +43,7 @@ autoload -U colors
 colors
 
 ### テーマ
+# eval "$(starship init zsh)"
 source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.p10k.zsh
 

@@ -27,6 +27,7 @@ ln -sf ${PWD}/.gemini/GEMINI.md ~/.gemini/GEMINI.md
 
 # neovim
 ln -sf ${PWD}/.config/nvim/init.lua ~/.config/nvim/init.lua
+ln -sf ${PWD}/.config/starship.toml ~/.config/starship.toml
 
 # .config dir
 shopt -s nullglob dotglob
