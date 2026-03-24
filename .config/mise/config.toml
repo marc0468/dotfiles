@@ -4,11 +4,15 @@ python.uv_venv_auto = true
 experimental = true
 
 [tools]
-# Core tools
+#----Core tools----
 node = "lts"
+go = "latest"
+
+#----Python----
 python = "3.11"
 # python = "miniconda3-latest"
-go = "latest"
+uv = "latest"
+ruff = "latest"
 
 #----AI agents----
 "npm:@openai/codex" = "latest"
@@ -17,9 +21,7 @@ go = "latest"
 
 "pipx:huggingface_hub[cli]" = "latest"
 
-uv = "latest"
-ruff = "latest"
-
+#----command line tools----
 aws-cli = "latest"
 hadolint = "latest"
 bat = "latest"
