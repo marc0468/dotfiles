@@ -146,7 +146,12 @@ sudo apt-get -y install cuda-drivers
 ```sh
 winget export -o WingetApp.json
 winget import -i WingetApp.json --accept-package-agreements --ignore-unavailable
-```
+
+## シンボリックリンクの設定
+mkdir $HOME\.config\git
+New-Item -ItemType SymbolicLink -Path "$HOME\.config\git\ignore" -Target "$PWD\.config\git\ignore"
+New-Item -ItemType SymbolicLink -Path "$HOME\.config\starship.toml" -Target "$PWD\.config\starship.toml"
+"```
 
 cudaはwingetで入れるとパスも通してくれるので便利。
 
