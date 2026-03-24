@@ -17,7 +17,7 @@ ln -sf ${PWD}/.claude/settings.json ~/.claude/settings.json
 
 # codex
 mkdir -p ~/.codex
-ln -sf ${PWD}/.codex/config.toml ~/.codex/config.toml
+cp ${PWD}/.codex/config.toml ~/.codex/config.toml
 ln -sf ${PWD}/.codex/AGENTS.md ~/.codex/AGENTS.md
 ln -sfn ${PWD}/.codex/prompts ~/.codex/prompts
 
