@@ -13,33 +13,6 @@ brew bundle
 brew bundle dump
 ```
 
-#### OS settings
-
-うまく機能していないものもある。
-
-```sh
-#ネットワークドライブ上への.DS_Storeファイルの作成抑制
-defaults write com.apple.desktopservices DSDontWriteNetworkStores true
-#USB上への.DS_Storeファイルの作成抑制
-defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
-# バッテリー残量を％表記に
-defaults write com.apple.menuextra.battery ShowPercent -string "YES"
-# 日付、曜日、時間の表記に
-defaults write com.apple.menuextra.clock DateFormat -string 'EEE d MMM HH:mm:ss'
-# タップしたときクリック
-defaults write -g com.apple.mouse.tapBehavior -int 1
-# 全ての拡張子のファイルを表示する
-defaults write -g AppleShowAllExtensions -bool true
-# 三本指でドラッグ
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -bool true
-# 三本指でドラッグ
-defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
-# キーのリピート
-defaults write NSGlobalDomain KeyRepeat -int 2
-# リピート入力認識までの時間
-defaults write NSGlobalDomain InitialKeyRepeat -int 15
-```
-
 ### Ubuntu
 
 アップデートと必須ソフトのインストール
