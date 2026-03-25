@@ -52,3 +52,7 @@ if [[ $(command -v eza) ]]; then
   alias la=ea
   alias ll=ee
 fi
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  alias no-sleep='caffeinate -i -d'
+fi
