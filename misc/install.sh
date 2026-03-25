@@ -27,8 +27,8 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     vim \
     curl \
     htop \
-    nvtop \
-    tree
+    tree \
+    bash-completion
 fi
 
 # mise

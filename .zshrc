@@ -57,15 +57,10 @@ export PATH="$HOME/.local/bin:$PATH"
 if [[ -x "$HOME/.local/bin/mise" ]]; then
   eval "$("$HOME/.local/bin/mise" activate zsh)"
 fi
+
 # uv
 if [[ $(command -v uv) ]]; then
-  # command completion for uv
   eval "$(uv generate-shell-completion zsh)"
-fi
-
-# kubectl
-if [[ $(command -v kubectl) ]]; then
-  source <(kubectl completion zsh)
 fi
 
 # alias
