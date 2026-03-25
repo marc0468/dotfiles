@@ -1,16 +1,17 @@
 # README
 
 ```sh
-git clone https://github.com/marc0468/dotfiles.git ~/dotfiles
+git clone https://github.com/marcotech-jp/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 # Macの場合はxcode-selectを先に実行する。
 xcode-select --install
 ./setup.sh
-```
-
-```sh
+# GitHubのユーザ名とメールアドレスを設定する。
 git config --local user.name "Marco"
 git config --local user.email "17253707+marc0468@users.noreply.github.com"
+# もしくは
+git config --global user.name "Marco"
+git config --global user.email "17253707+marc0468@users.noreply.github.com"
 ```
 
 See also: [Setup](./misc/setup.md)
