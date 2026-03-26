@@ -7,7 +7,7 @@ ln -sf ${PWD}/.alias ~/.alias
 
 # shell
 ln -sf ${PWD}/.bashrc ~/.bashrc
-echo "source ~/.bashrc" >> ~/.bash_profile
+# echo "source ~/.bashrc" >> ~/.bash_profile
 ln -sf ${PWD}/.zshrc ~/.zshrc
 ln -sf ${PWD}/.p10k.zsh ~/.p10k.zsh
 
@@ -31,8 +31,7 @@ ln -sf ${PWD}/.config/starship.toml ~/.config/starship.toml
 
 # .config dir
 shopt -s nullglob dotglob
-
-settings_list=(bat git mise tmux wezterm ghostty)
+settings_list=(bat ghostty git mise tmux uv wezterm)
 [[ $(uname) == Darwin ]] && settings_list+=(karabiner)
 
 for setting in "${settings_list[@]}"; do
