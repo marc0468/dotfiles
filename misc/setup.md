@@ -43,7 +43,7 @@ sudo apt install -y \
   nvtop \
   tree \
   bash-completion
-curl -fsSL https://raw.githubusercontent.com/mkasberg/ghostty-ubuntu/HEAD/install.sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/mkasberg/ghostty-ubuntu/HEAD/install.sh)"
 ```
 
 #### Ubuntuの自動アップデートを無効にする
