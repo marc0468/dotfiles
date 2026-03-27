@@ -25,7 +25,7 @@ alias k='kubectl'
 alias ..='cd ..'
 
 alias dot='cd ~/dotfiles'
-alias home='cd ~/${home}'
+alias h='cd ~/${home}'
 
 # AI tools
 alias cx='codex'
