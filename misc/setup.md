@@ -1,5 +1,12 @@
 # Setup
 
+## Font
+
+以下をよく使っている。
+
+- UDEV Gothic 35NF: <https://github.com/yuru7/udev-gothic>
+- Migu 1M: <https://itouhiro.github.io/mixfont-mplus-ipa/migu/>
+
 ## OS別の設定
 
 ### Mac
@@ -29,6 +36,7 @@ sudo apt install -y \
   nvtop \
   tree \
   bash-completion
+curl -fsSL https://raw.githubusercontent.com/mkasberg/ghostty-ubuntu/HEAD/install.sh
 ```
 
 #### Ubuntuの自動アップデートを無効にする
@@ -48,17 +56,6 @@ APT::Periodic::Unattended-Upgrade "1";
 
 - <https://qiita.com/ymbk990/items/cabfc383e1c5e35eb4f9>
 - <https://skrum.co.jp/blog/ubuntu-automatic-application-of-security-updates/>
-
-#### フォントのインストール
-
-`RobotoMonoNerdFontMono-Regular`をインストールする。
-
-```sh
-mkdir temp_font
-cd temp_font
-curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/RobotoMono.tar.xz
-tar xvf RobotoMono.tar.xz
-```
 
 #### Capsをctrlに変更
 
