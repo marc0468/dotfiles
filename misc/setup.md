@@ -20,6 +20,13 @@ brew bundle
 brew bundle dump
 ```
 
+`.zshenv`に以下を記載する。
+
+```.zshenv
+# bitwarden SSH
+export SSH_AUTH_SOCK="$HOME/Library/Containers/com.bitwarden.desktop/Data/.bitwarden-ssh-agent.sock"
+```
+
 ### Ubuntu
 
 アップデートと必須ソフトのインストール

@@ -19,7 +19,7 @@ ruff = "latest"
 # "npm:@google/gemini-cli" = "latest"
 # "npm:@github/copilot" = "latest"
 
-"pipx:huggingface_hub[cli]" = "latest"
+# "pipx:huggingface_hub[cli]" = "latest"
 
 #----command line tools----
 aws-cli = "latest"

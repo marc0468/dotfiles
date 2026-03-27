@@ -3,6 +3,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_STATE_HOME="$HOME/.local/state"
 export EDITOR=vim
 export VISUAL=vim
+export PATH="$HOME/.local/bin:$PATH"
 
 ## History
 export HISTFILE=~/.zsh/.zsh_history
@@ -37,8 +38,6 @@ source ~/.p10k.zsh
 ### plugin
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-
-export PATH="$HOME/.local/bin:$PATH"
 
 # mise
 if [[ -x "$HOME/.local/bin/mise" ]]; then
