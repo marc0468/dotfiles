@@ -28,7 +28,7 @@ cp ${PWD}/.codex/config.toml ~/.codex/config.toml
 ln -sf ${PWD}/.codex/AGENTS.md ~/.codex/AGENTS.md
 ln -sfn ${PWD}/.codex/prompts ~/.codex/prompts
 
-ln -sf ${PWD}/.config/nvim ~/.config/nvim
+ln -sf ${PWD}/.config/nvim ~/.config
 ln -sf ${PWD}/.config/starship.toml ~/.config/starship.toml
 
 # .config dir
