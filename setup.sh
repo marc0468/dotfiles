@@ -1,9 +1,12 @@
 #!/bin/bash
-cd `dirname $0`
+cd "$(dirname "$0")"
+
+mkdir -p "$HOME/.config" "$HOME/.local/bin"
 
 # general
 ln -sf ${PWD}/.vimrc ~/.vimrc
 ln -sf ${PWD}/.alias ~/.alias
+ln -sf ${PWD}/.npmrc ~/.npmrc
 
 # shell
 ln -sf ${PWD}/.bashrc ~/.bashrc
