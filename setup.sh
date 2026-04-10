@@ -34,7 +34,7 @@ ln -sf ${PWD}/.config/starship.toml ~/.config/starship.toml
 
 # .config dir
 shopt -s nullglob dotglob
-settings_list=(bat ghostty git mise tmux uv wezterm)
+settings_list=(bat ghostty git lazygit mise tmux uv wezterm)
 [[ $(uname) == Darwin ]] && settings_list+=(karabiner)
 
 for setting in "${settings_list[@]}"; do
