@@ -41,7 +41,7 @@ module.exports = {
         aiNumber: 5,
         aiDiffIgnore: ["package-lock.json"],
         aiQuestionCB: ({ maxSubjectLength, diff }) =>
-            `以下のGit diffコードに対して、接頭辞を付けずに、洞察に富み簡潔なGitコミットメッセージを現在形で記述してください。なお、この文の長さは${maxSubjectLength}文字を超えてはなりません！！ : \n\`\`\`diff\n${diff}\n\`\`\``,
+            `以下のGit diffコードに対して、接頭辞を付けずに、洞察に富み簡潔なGitコミットメッセージを日本語の現在形で記述してください。なお、この文の長さは${maxSubjectLength}文字を超えてはなりません！！ : \n\`\`\`diff\n${diff}\n\`\`\``,
 
         themeColorCode: "",
         scopes: [],
