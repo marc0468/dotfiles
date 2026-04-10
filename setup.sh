@@ -7,6 +7,7 @@ mkdir -p "$HOME/.config" "$HOME/.local/bin"
 ln -sf ${PWD}/.vimrc ~/.vimrc
 ln -sf ${PWD}/.alias ~/.alias
 ln -sf ${PWD}/.npmrc ~/.npmrc
+ln -sf ${PWD}/commitlint.config.js ~//commitlint.config.js
 
 # shell
 ln -sf ${PWD}/.bashrc ~/.bashrc

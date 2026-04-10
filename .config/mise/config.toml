@@ -20,6 +20,8 @@ ruff = "latest"
 # "npm:@github/copilot" = "latest"
 
 # "pipx:huggingface_hub[cli]" = "latest"
+"npm:czg" = "latest"
+"npm:cz-git" = "latest"
 
 #----command line tools----
 aws-cli = "latest"
