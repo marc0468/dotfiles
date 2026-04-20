@@ -16,12 +16,9 @@ ruff = "latest"
 
 #----AI agents----
 "npm:@openai/codex" = "latest"
-# "npm:@google/gemini-cli" = "latest"
+"npm:@google/gemini-cli" = "latest"
+"npm:@anthropic-ai/claude-code" = "2.1.112"
 # "npm:@github/copilot" = "latest"
-
-# "pipx:huggingface_hub[cli]" = "latest"
-"npm:czg" = "latest"
-"npm:cz-git" = "latest"
 
 #----command line tools----
 aws-cli = "latest"
@@ -35,4 +32,7 @@ fzf = "latest"
 neovim = "latest"
 rg = "latest"
 fd = "latest"
+
 lazygit = "latest"
+"npm:czg" = "latest"
+"npm:cz-git" = "latest"
